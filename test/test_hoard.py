@@ -1,5 +1,4 @@
 import sqlite3
-import time
 from typing import *  # noqa
 
 from hoardy import Hoard

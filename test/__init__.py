@@ -1,5 +1,4 @@
 from contextlib import contextmanager
-import gc
 from pathlib import Path
 import shutil
 import tempfile as tf

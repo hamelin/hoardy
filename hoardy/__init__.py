@@ -50,8 +50,12 @@ class Hoard:
     @contextmanager
     def _modifying_db(self) -> Iterator[_DB]:
         with self._fs.transaction:
-            with sqlite3.connect(self._path_db_local) as db:
-                yield db
+            db = sqlite3.connect(self._path_db_local)
+            try:
+                with db:
+                    yield db
+            finally:
+                db.close()
             self._fs.put(self._path_db_local, self._path_db)
 
 
