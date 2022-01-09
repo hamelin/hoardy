@@ -1,0 +1,14 @@
+name: hoardy
+dependencies:
+  - python>=3.7
+  - ipykernel
+  - flake8
+  - mypy
+  - pytest
+  - setuptools
+  - wheel
+  - twine
+  - pip
+  - pip:
+      - -e .
+      - devdash
